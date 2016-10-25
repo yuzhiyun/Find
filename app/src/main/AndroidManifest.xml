@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yuzhiyun.find">
+
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.MeActivity"
+            android:label="@string/title_activity_me"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FindOrRecord.controller.activity.FindOrRecordActivity"
+            android:label="@string/title_activity_find_or_record"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginAndRegister.controller.activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginAndRegister.controller.activity.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FindOrRecord.controller.activity.FindActivity"
+            android:label="@string/title_activity_find"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FindOrRecord.controller.activity.FindResultActivity"
+            android:label="@string/title_activity_find_result"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".main.controller.activity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FindOrRecord.controller.activity.BindNewArticleActivity"
+            android:label="@string/title_activity_bind_new_article"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

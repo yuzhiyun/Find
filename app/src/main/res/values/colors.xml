@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff03a9f4</color>
+    <color name="colorPrimaryDark">#ee3399f4</color>
+    <color name="colorAccent">#ee3399f4</color>
+    <color name="red">#FF4081</color>
+    <color name="text_color">#666666</color>
+    <color name="text_back_color">#CFCFCF</color>
+    <color name="balck">#000000</color>
+    <color name="h">#ee0360e7</color>
+    <color name="ba">#c8e6e9</color>
+</resources>
