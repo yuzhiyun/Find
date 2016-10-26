@@ -22,13 +22,14 @@
         android:src="@drawable/welcome_logo" />
 
     <TextView
+
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:id="@+id/tvUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="俞志云"
+        android:text="暂无"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 

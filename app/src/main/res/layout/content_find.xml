@@ -18,17 +18,17 @@
         android:layout_height="wrap_content"
         android:text="什么是暗号？" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:src="@drawable/card"/>
-    <TextView
-        android:id="@+id/tvErrorMsg"
-        android:textColor="@android:color/holo_red_light"
-        android:layout_marginTop="@dimen/double_activity_horizontal_margin"
-        android:text="\n抱歉，无结果，原因如下：\n\n1、该暗号对应物品尚未丢失\n\n2、该暗号尚未绑定一件物品"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+        <!--android:src="@drawable/card"/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/tvErrorMsg"-->
+        <!--android:textColor="@android:color/holo_red_light"-->
+        <!--android:layout_marginTop="@dimen/double_activity_horizontal_margin"-->
+        <!--android:text="\n抱歉，无结果，原因如下：\n\n1、该暗号对应物品尚未丢失\n\n2、该暗号尚未绑定一件物品"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
 
 </LinearLayout>

@@ -17,11 +17,10 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ui.MeActivity"
             android:label="@string/title_activity_me"
@@ -29,7 +28,13 @@
         <activity
             android:name=".FindOrRecord.controller.activity.FindOrRecordActivity"
             android:label="@string/title_activity_find_or_record"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".LoginAndRegister.controller.activity.LoginActivity"
             android:label="@string/title_activity_login"
@@ -41,7 +46,8 @@
         <activity
             android:name=".FindOrRecord.controller.activity.FindActivity"
             android:label="@string/title_activity_find"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".FindOrRecord.controller.activity.FindOrRecordActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".FindOrRecord.controller.activity.FindResultActivity"
             android:label="@string/title_activity_find_result"
@@ -49,17 +55,16 @@
         <activity
             android:name=".main.controller.activity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".FindOrRecord.controller.activity.BindNewArticleActivity"
             android:label="@string/title_activity_bind_new_article"
+            android:parentActivityName=".main.controller.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".main.controller.activity.EditArticleActivity"
+            android:label="@string/title_activity_edit_article"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

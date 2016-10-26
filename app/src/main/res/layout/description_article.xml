@@ -23,6 +23,7 @@
             android:src="@drawable/number" />
 
         <TextView
+            android:id="@+id/tvNumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/double_activity_horizontal_margin"
@@ -32,12 +33,6 @@
             android:textSize="17dp" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"></LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,6 +47,7 @@
             android:src="@drawable/article" />
 
         <TextView
+            android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
@@ -63,10 +59,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"></LinearLayout>
 
 
     <LinearLayout
@@ -82,6 +74,7 @@
             android:src="@drawable/phone" />
 
         <TextView
+            android:id="@+id/tvPhone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/double_activity_horizontal_margin"
@@ -91,13 +84,6 @@
             android:textSize="17dp" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -124,9 +110,12 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tvDescription"
+
+        android:textColor="@android:color/white"
         android:text="    本人在湖南长沙天心区铁道校区丢失一个钱包，里面包含一张银行卡，一张身份证，若干现金，如有捡到者归还，必有重谢！！！"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"

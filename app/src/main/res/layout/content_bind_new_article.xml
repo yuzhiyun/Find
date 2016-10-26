@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="none">
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -17,21 +11,8 @@
         tools:context=".FindOrRecord.controller.activity.BindNewArticleActivity"
         tools:showIn="@layout/activity_bind_new_article">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="绑定新物品"
-                android:textColor="@android:color/white"
-                android:textSize="21dp" />
-        </LinearLayout>
-
         <LinearLayout
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="50dp"
 
@@ -46,6 +27,7 @@
                 android:src="@drawable/number" />
 
             <EditText
+                android:id="@+id/etNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/double_activity_horizontal_margin"
@@ -54,17 +36,11 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-
-            android:layout_marginTop="@dimen/half_activity_vertical_margin"
-            android:background="@android:color/darker_gray"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"></LinearLayout>
 
 
         <LinearLayout
+            android:gravity="center_vertical"
+
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -79,6 +55,8 @@
                 android:src="@drawable/article" />
 
             <EditText
+                android:id="@+id/etName"
+
                 android:layout_width="match_parent"
 
                 android:layout_height="match_parent"
@@ -88,21 +66,13 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-
-            android:layout_marginTop="@dimen/half_activity_vertical_margin"
-            android:background="@android:color/darker_gray"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"    ></LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
 
             android:layout_marginTop="@dimen/half_activity_vertical_margin"
+            android:gravity="center_vertical"
 
             android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -114,6 +84,8 @@
                 android:src="@drawable/phone" />
 
             <EditText
+                android:id="@+id/etPhone"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/double_activity_horizontal_margin"
@@ -122,20 +94,12 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-
-            android:layout_marginTop="@dimen/half_activity_vertical_margin"
-            android:background="@android:color/darker_gray"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="@dimen/half_activity_vertical_margin"
-
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin">
@@ -151,14 +115,17 @@
                 android:layout_marginLeft="@dimen/double_activity_horizontal_margin"
                 android:gravity="center_vertical"
                 android:text="详细描述 :"
-                android:textSize="17dp" />
-
+                android:textSize="17dp"
+                />
         </LinearLayout>
 
         <EditText
+            android:id="@+id/etDescription"
+            android:textColor="@android:color/white"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-
+            android:layout_height="100dp"
+            android:text="    本人在湖南长沙天心区铁道校区丢失一个钱包，里面包含一张银行卡，一张身份证，若干现金，如有捡到者归还，必有重谢！！！"
+            android:textSize="17dp"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:background="@drawable/text_back"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -178,4 +145,3 @@
             android:textSize="@dimen/activity_horizontal_margin" />
     </LinearLayout>
 
-</ScrollView>

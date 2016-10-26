@@ -9,35 +9,51 @@
     <include layout="@layout/description_article"></include>
 
     <LinearLayout
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:gravity="center_vertical|right"
-        android:orientation="horizontal"
-        android:layout_gravity="right">
+        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/delete" />
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/linearDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="删除"
-            android:textColor="@android:color/holo_red_light" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/edit" />
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/delete" />
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="删除"
+                android:textColor="@android:color/holo_red_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="编辑"
-            android:textColor="@color/colorPrimary" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:src="@drawable/edit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编辑"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
 
