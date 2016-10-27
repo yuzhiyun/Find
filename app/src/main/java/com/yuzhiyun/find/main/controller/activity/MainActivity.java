@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -38,11 +39,14 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.FindListener;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener ,SwipeRefreshLayout.OnRefreshListener{
 
 
     @Bind(R.id.fabBindNewArticle)
     FloatingActionButton fabBindNewArticle;
+
+    @Bind(R.id.swipRefreshLayout)
+    SwipeRefreshLayout swipRefreshLayout;
 
     @Bind(R.id.lvArticle)
     ListView lvArticle;
@@ -72,6 +76,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         initListView();
+        swipRefreshLayout.setOnRefreshListener(this);
+        //设置卷内的颜色
+        swipRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
         /**
          * NavigationView的header布局中常用来放置用户头像、用户名等信息，
          * 所以我们必须获取到header布局中的view。
@@ -89,20 +97,39 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * 编辑某个物品的信息成功后，会自动返回这个activity,于是需要重新获取一下数据
+     * 後來感覺這樣不太好，因为打开任何activity或者切换到后台之后又回到这个界面，还得获取一下数据，
+     * 这样没必要
+     * 应该改成下来刷新数据
      */
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        initListView();
-    }
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        initListView();
+//    }
 
     /**
      * 初始化物品展示列表
      */
     private void initListView() {
-        final ProgressDialog progress;
-        progress = new ProgressDialog(context);
-        progress.show();
+
+
+//        final ProgressDialog progress;
+//        progress = new ProgressDialog(context);
+//        progress.show();
+
+        /**
+         * swipRefreshLayout自动刷新功能
+         * 直接 swipRefreshLayout.setRefreshing(true);是无法出现动画的
+         * 只能新开一个线程这样写
+         * 而且，这样只是显示一下动画而已
+         * 是不会触发onRefresh（）的
+         * */
+        swipRefreshLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                swipRefreshLayout.setRefreshing(true);
+            }
+        });
         BmobQuery<Article> bmobQuery = new BmobQuery<>();
         //查询登录用户的所有物品
         bmobQuery.addWhereEqualTo("user", BmobUser.getCurrentUser(context));
@@ -115,7 +142,7 @@ public class MainActivity extends AppCompatActivity
         bmobQuery.findObjects(context, new FindListener<Article>() {
             @Override
             public void onSuccess(List<Article> list) {
-                progress.dismiss();
+                pauseRefresh();
                 if (0 != list.size())
                     lvArticle.setAdapter(new ArticleDescriptionAdapter(list, context));
                 else {
@@ -128,7 +155,7 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onError(int i, String s) {
-                progress.dismiss();
+                pauseRefresh();
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setMessage("错误" + s);
                 builder.create();
@@ -136,6 +163,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
+
+    }
+
+    private void pauseRefresh() {
+        if(swipRefreshLayout.isRefreshing())
+        swipRefreshLayout.setRefreshing(false);
     }
 
     /**
@@ -183,5 +217,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onRefresh() {
+        initListView();
     }
 }

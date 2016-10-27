@@ -1,5 +1,7 @@
 package com.yuzhiyun.find.FindOrRecord.controller.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +52,11 @@ public class FindResultActivity extends BaseActivity {
 
     @OnClick(R.id.btnContactOwner)
     public void  btnContactOwner(){
-        Toast.makeText(FindResultActivity.this, "向"+App.article.getPhone()+"拨打电话", Toast.LENGTH_SHORT).show();
+        Uri uri = Uri.parse("tel:"+App.article.getPhone());
+
+        Intent intent = new Intent(Intent.ACTION_DIAL, uri);
+
+        startActivity(intent);
+//        Toast.makeText(FindResultActivity.this, "向"+App.article.getPhone()+"拨打电话", Toast.LENGTH_SHORT).show();
     }
 }
